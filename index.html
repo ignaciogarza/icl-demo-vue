@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ICL</title>
+	<script type="module" src="/icl.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<icl-test
+		uuid="09393c5d-74e7-4d9b-b030-5dca1808ee26"
+		lang="es"
+		tasks="Intro1,Task1,Intro2,Task2"
+		style="display:block; width:100vw; height:100vh;">
+	</icl-test>
+
+	<script>
+		const icl = document.querySelector('icl-test')
+
+		icl.addEventListener('ready', e => console.log('ready', e.detail[0]));
+		icl.addEventListener('unready', e => console.log('unready', e.detail[0]));
+		icl.addEventListener('backup', e => console.log('backup', e.detail[0]));
+		icl.addEventListener('next-task', e => console.log('next-task', e.detail[0]));
+		icl.addEventListener('end', e => console.log('end', e.detail[0]));
+	</script>
+</body>
+</html>
